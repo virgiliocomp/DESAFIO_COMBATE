@@ -2,10 +2,10 @@ package entities;
 
 public class Champion   {
 
-    private String name;
+    private final String name;
     private int life;
-    private int attack;
-    private int armor;
+    private final int attack;
+    private final int armor;
 
     public Champion(String name, int life, int attack, int armor) {
         this.name = name;
@@ -57,13 +57,10 @@ public class Champion   {
         } else {
             setLife(currentHealth);
         }
-
-        status();
     }
 
     public String status(){
         if (getLife() <= 0){
-            setLife(0);
             return getName() + ": " + getLife() + " de vida (morreu)";
         }
         return getName() + ": " + getLife() + " de vida";
